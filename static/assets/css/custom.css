@@ -1,0 +1,39 @@
+h2.subreddit_title {
+    margin: 0 0 0 0
+}
+
+#submit {
+    margin-top : 10px;
+}
+
+h3.thread_title {
+    margin: 0 0 0 0;
+    color: #00c4ff;
+}
+
+blockquote {
+    margin: 0 0 0 0;
+}
+
+pre.parent_comment {
+    overflow-x: auto;
+    white-space: pre-wrap;
+    white-space: -moz-pre-wrap;
+    white-space: -pre-wrap;
+    white-space: -o-pre-wrap;
+    word-wrap: break-word;
+    color: rgba(255, 255, 255, 0.55);
+    padding: 0 em;
+    margin: 0 0 0 0;
+}
+
+#spinner {
+    display: none;
+    position: absolute;
+    text-align: center;
+    left: 50%;
+    top: 50%;
+    border-radius: 50%;
+    -webkit-animation: spin 2s linear infinite;
+    animation: spin 2s linear infinite;
+}

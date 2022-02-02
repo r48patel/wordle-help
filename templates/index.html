@@ -1,0 +1,15 @@
+{% extends "layout.html" %}
+{% block content %}
+	<div id="wrapper">
+		<section id="{{ subreddit }}" class="wrapper style2 fade-up">
+			<div class="inner">
+				<h2 class="subreddit_title">Possible Words</h2>
+				<ul>
+				{% for word in word_list %}
+					<li>{{ word }}</li>
+				{% endfor %}
+				</ul>
+			</div>
+		</section>
+	</div>
+{% endblock content %}
