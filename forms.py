@@ -4,19 +4,20 @@ from wtforms import StringField, SubmitField
 
 class SearchForm(FlaskForm):
     contains = StringField('contains',
-                           render_kw={"placeholder": "contains",
+                           render_kw={"placeholder": "No spaces between letters",
                                       "novalidate": "novalidate",
                                      })
     excludes = StringField('excludes',
-                           render_kw={"placeholder": "excludes",
+                           render_kw={"placeholder": "No spaces between letters",
                                       "novalidate": "novalidate",
                                      })
     known_position = StringField('known_position',
-                                 render_kw={"placeholder": "known positions",
+                                 render_kw={"placeholder": "format: LETTER-POSITION (Space Separated)",
                                             "novalidate": "novalidate",
                                            })
     wrong_position = StringField('wrong_position',
-                                 render_kw={"placeholder": "wrong positions",
+                                 render_kw={"placeholder": "format: LETTER-POSITION (Space Separated)",
                                             "novalidate": "novalidate",
                                            })
-    submit = SubmitField('Submit', render_kw={"onclick": "loading();"})
+    submit = SubmitField('Submit')
+    # submit = SubmitField('Submit', render_kw={"onclick": "loading();"})
