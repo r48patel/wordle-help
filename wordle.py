@@ -11,7 +11,7 @@ def get_possible_word_list(contains, excludes, known_position, wrong_position):
 
 	if known_position:
 		for pair in known_position.split(' '):
-			letter = pair.split('-')[0]
+			letter = pair.split('-')[0].lower()
 			position = int(pair.split('-')[1])-1
 
 			position_list[position] = letter
@@ -20,7 +20,7 @@ def get_possible_word_list(contains, excludes, known_position, wrong_position):
 
 	if wrong_position:
 		for pair in wrong_position.split(' '):
-			letter = pair.split('-')[0]
+			letter = pair.split('-')[0].lower()
 			position = int(pair.split('-')[1])-1
 
 			if wrong_position_list[position] != '.':
@@ -34,8 +34,8 @@ def get_possible_word_list(contains, excludes, known_position, wrong_position):
 
 	wrong_position_regex = "".join(wrong_position_list)
 
-	contains_list = [word for word in words_list if all(letter in word for letter in contains)]
-	contains_and_exclude_list = [word for word in contains_list if all(letter not in word for letter in excludes)]
+	contains_list = [word for word in words_list if all(letter in word for letter in contains.lower())]
+	contains_and_exclude_list = [word for word in contains_list if all(letter not in word for letter in excludes.lower())]
 
 	r = re.compile(position_regex)
 	almost_final_word_list = list(filter(r.match, contains_and_exclude_list))
