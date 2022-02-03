@@ -17,19 +17,31 @@
                         <form method="POST" action="">
                             {{ form.hidden_tag() }}
                             <fieldset>
-                                <div class="row">
-                                    <div class="col-sm-11">
-                                    {{ form.contains }}
+                                <div class="row gtr-uniform">
+                                    <div class="col-3 col-12-small">
+                                        Enter letters to include
+                                        {{ form.contains }}
                                     </div>
-                                    <div class="col-sm-11">
+<!--                                </div>-->
+<!--                                <div class="row gtr-uniform">-->
+                                    <div class="col-3 col-12-small">
+                                        Enter letters to exclude
                                         {{ form.excludes }}
                                     </div>
-                                    <div class="col-sm-11">
+                                </div>
+                                <div class="row gtr-uniform">
+                                    <div class="col-3 col-12-small">
+                                        Enter known position of Letters (format: LETTER-POSITION) (Space Separated)
                                         {{ form.known_position }}
                                     </div>
-                                    <div class="col-sm-11">
+<!--                                </div>-->
+<!--                                <div class="row gtr-uniform">-->
+                                    <div class="col-3 col-12-small">
+                                        Enter known letter wrong positions (format: LETTER-POSITION) (Space Separated)
                                         {{ form.wrong_position }}
                                     </div>
+                                </div>
+                                <div class="row">
                                     <div id="submit" class="col-sm-11">
                                     {{ form.submit }}
                                     </div>
