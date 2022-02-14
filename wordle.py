@@ -17,8 +17,12 @@ def get_possible_word_list(contains, excludes, known_position, wrong_position):
 	position_list = ['.']*5
 	if known_position:
 		for pair in known_position.split(' '):
-			letter = pair.split('-')[0].lower()
-			position = int(pair.split('-')[1])-1
+			if '-' in pair:
+				letter = pair.split('-')[0].lower()
+				position = int(pair.split('-')[1])-1
+			else:
+				letter = pair[0]
+				position = int(pair[1])-1
 
 			position_list[position] = letter
 
@@ -30,8 +34,12 @@ def get_possible_word_list(contains, excludes, known_position, wrong_position):
 	wrong_position_list = ['.']*5
 	if wrong_position:
 		for pair in wrong_position.split(' '):
-			letter = pair.split('-')[0].lower()
-			position = int(pair.split('-')[1])-1
+			if '-' in pair:
+				letter = pair.split('-')[0].lower()
+				position = int(pair.split('-')[1])-1
+			else:
+				letter = pair[0]
+				position = int(pair[1])-1
 
 			if wrong_position_list[position] != '.':
 				wrong_position_list[position] += letter
@@ -52,8 +60,8 @@ def get_possible_word_list(contains, excludes, known_position, wrong_position):
 def main():
 	contains = input("Enter Letter to included: ")
 	excludes = input("Enter Letter to exclude: ")
-	known_position = input("Enter known position of Letters (format: LETTER-POSITION) (seperate by space): ")
-	wrong_position = input("Enter known letter wrong positions (format: LETTER-POSITION) (seperate by space): ")
+	known_position = input("Enter known position of Letters separate by space (ex: s3 a1) : ")
+	wrong_position = input("Enter known letter wrong positions separate by space (ex: t1 u2): ")
 
 	print(get_possible_word_list(contains, excludes, known_position, wrong_position))
 

@@ -16,7 +16,7 @@ class SearchForm(FlaskForm):
                                             "novalidate": "novalidate",
                                            })
     wrong_position = StringField('wrong_position',
-                                 render_kw={"placeholder": "unknown positions",
+                                 render_kw={"placeholder": "wrong positions",
                                             "novalidate": "novalidate",
                                            })
     submit = SubmitField('Submit')
