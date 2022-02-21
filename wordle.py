@@ -16,9 +16,9 @@ def get_possible_word_list(contains, excludes, known_position, wrong_position):
 	# Create a regex for known letters position and filter the above list with it.
 	position_list = ['.']*5
 	if known_position:
-		for pair in known_position.split(' '):
+		for pair in known_position.lower().split(' '):
 			if '-' in pair:
-				letter = pair.split('-')[0].lower()
+				letter = pair.split('-')[0]
 				position = int(pair.split('-')[1])-1
 			else:
 				letter = pair[0]
@@ -33,9 +33,9 @@ def get_possible_word_list(contains, excludes, known_position, wrong_position):
 	# Create a regex with known letters wrong position and filter the above list.
 	wrong_position_list = ['.']*5
 	if wrong_position:
-		for pair in wrong_position.split(' '):
+		for pair in wrong_position.lower().split(' '):
 			if '-' in pair:
-				letter = pair.split('-')[0].lower()
+				letter = pair.split('-')[0]
 				position = int(pair.split('-')[1])-1
 			else:
 				letter = pair[0]
